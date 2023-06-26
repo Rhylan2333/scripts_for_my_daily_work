@@ -21,7 +21,6 @@ lengths = []
 for seq_record in SeqIO.parse(fasta_file, "fasta"):
     lengths.append(len(seq_record.seq))
 
-
 print('input:', fasta_file)
 print('output:', csv_file)
 print('count:', len(lengths))  # 输出所有序列个数
