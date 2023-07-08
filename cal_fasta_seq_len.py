@@ -2,6 +2,7 @@ from Bio import SeqIO
 import csv
 import argparse
 
+
 # 添加命令行解析参数，这会创建输入fasta文件和输出csv文件的命令行参数 "-i" 和 "-o"。
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input", required=True, help="Input FASTA file")
