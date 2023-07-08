@@ -4,7 +4,7 @@
 
 统计一个FASTA文件中所有序列的长度然后以CSV格式输出，一般选最长的作为参考序列。示例：
 
-```zsh
+```shell
 python3 ./cal_fasta_seq_len.py -i ./XXX_protein.faa -o ./XXX_pro_seq_len.csv
 grep '>' ./XXX_protein.faa
 # 进行多序列比对
@@ -38,7 +38,7 @@ mode |   affinity | dist from best mode
 
 示例：
 
-```zsh
+```shell
 python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log.csv
 ```
 
