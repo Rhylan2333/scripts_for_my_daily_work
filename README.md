@@ -15,7 +15,28 @@ clustalo -i ./XXX_protein.faa -o ./XXX_pro_MSA_result.clustal --outfmt=clustal -
 
 ## vina_docking-log_parser.py
 
-处理AutoDock Vina的对接日志。传入对接结果（输出的log），此脚本的输出文件为一个CSV文件，它件包含有关对接mode的亲和力、RMSD信息。实例：
+处理AutoDock Vina的对接日志。传入对接结果（输出的log），此脚本的输出文件为一个CSV文件，它件包含有关对接mode的亲和力、RMSD信息。
+
+```
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -4.091          0          0
+   2        -3.98      2.247       2.37
+   3       -3.915       16.1       16.9
+   ...
+```
+
+👇
+
+| mode | affinity (kcal/mol) | dist from best mode (rmsd l.b.) | dist from best mode (rmsd u.b.) |
+|------|---------------------|---------------------------------|---------------------------------|
+| 1    | -3.713              | 0                               | 0                               |
+| 2    | -3.641              | 1.94                            | 2.722                           |
+| 3    | -3.482              | 24.26                           | 25.25                           |
+| ...  | ...                 | ...                             | ...                             |
+
+示例：
 
 ```zsh
 python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log.csv
