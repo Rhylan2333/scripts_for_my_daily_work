@@ -21,4 +21,4 @@ clustalo -i ./XXX_protein.faa -o ./XXX_pro_MSA_result.clustal --outfmt=clustal -
 python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log.csv
 ```
 
-然后查看CSV文件就可以知道亲和力跟RMSD了☺️
+然后查看CSV文件就可以知道亲和力、RMSD了☺️
