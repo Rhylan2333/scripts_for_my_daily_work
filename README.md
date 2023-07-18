@@ -52,7 +52,7 @@ cd Vim-adventure/vim-adventures
 conda create -n vim-adventure -y
 conda activate vim-adventure
 conda install -c conda-forge nodejs -y
-# npm install -g npm@6
+npm install -g npm@6
 npm install
 node bin/www.js
 ```
