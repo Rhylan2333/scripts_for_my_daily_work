@@ -43,3 +43,16 @@ python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log
 ```
 
 然后查看CSV文件就可以知道亲和力、RMSD了☺️
+
+## 我[想玩 VIM Adventures](https://zhuanlan.zhihu.com/p/628613725)
+
+```shell
+git clone https://github.com/AkshayGupta8/Vim-adventure.git
+cd Vim-adventure/vim-adventures
+conda create -n vim-adventure -y
+conda activate vim-adventure
+conda install -c conda-forge nodejs -y
+# npm install -g npm@6
+npm install
+node bin/www.js
+```
