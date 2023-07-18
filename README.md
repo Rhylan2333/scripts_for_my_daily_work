@@ -57,8 +57,13 @@ conda install -c conda-forge nodejs -y
 npm install -g npm@6
 npm install
 node bin/www.js
+cd ..
+cd ..
+conda deactivate
+conda env remove --name vim-adventure
+rm -rf Vim-adventure
 ```
 
-### [Interactive Vim tutorial](https://www.openvim.com/)
+### [Interactive Vim tutorial](https://www.openvim.com/)，好！
 
 ### [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html)
