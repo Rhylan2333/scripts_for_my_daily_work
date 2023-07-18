@@ -46,6 +46,8 @@ python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log
 
 ## 我[想玩 VIM Adventures](https://zhuanlan.zhihu.com/p/628613725)
 
+### 破解版
+
 ```shell
 git clone https://github.com/AkshayGupta8/Vim-adventure.git
 cd Vim-adventure/vim-adventures
@@ -56,3 +58,7 @@ npm install -g npm@6
 npm install
 node bin/www.js
 ```
+
+### [Interactive Vim tutorial](https://www.openvim.com/)
+
+### [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html)
