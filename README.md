@@ -44,6 +44,18 @@ python3 ./vina_docking-log_parser.py -i ./XXX.vina.out.log -o ./XXX.vina.out.log
 
 然后查看CSV文件就可以知道亲和力、RMSD了☺️
 
+## 我的 Docker 常用指令
+
+```
+docker container ls  # 查看需要push的container
+docker commit -a "Yuhao Cai" e1079b1cf715 caicai0/my_debian:v1.2  # “e1079b1cf715”是container的ID。
+docker push caicai0/my_debian:v1.2
+# 接下来是启动pull下来的容器
+docker run --hostname=caicai --volume=C:\Users\cauca\Desktop\molecular_docking_of_two_drugs_with_zebrafish_and_FAW_work_path:/root/molecular_docking_of_two_drugs_with_zebrafish_and_FAW_work_path --workdir=/root/molecular_docking_of_two_drugs_with_zebrafish_and_FAW_work_path --name my_bioinfo -t -i -d caicai0/my_debian:v1.2
+```
+
+---
+
 ## 我想玩 [VIM Adventures](https://zhuanlan.zhihu.com/p/628613725)
 
 ### 破解版
