@@ -56,8 +56,9 @@ docker run --hostname=caicai --volume=[本地路径]:[容器路径] --workdir=[�
 ## PyMOL 教育版，申请起来比较容易
 
 - [PyMOL教育版安装教程](https://zhuanlan.zhihu.com/p/598711018)
-- [PyMOL 官网](https://pymol.org/2/)
-- [PyMod 如虎添翼](https://pymolwiki.org/index.php/PyMod)
+- [PyMOL 官网](https://pymol.org/2/)，下载。
+- [PyMod 如虎添翼](https://pymolwiki.org/index.php/PyMod)，可视化地使用 modeller。
+- [能用 conda 安装 modeller](https://salilab.org/modeller/download_installation.html) 的话，绝不用软件库或解压包，因为环境依赖问题。
 
 ---
 
