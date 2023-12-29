@@ -57,6 +57,7 @@ docker run --hostname=caicai --volume=[本地路径]:[容器路径] --workdir=[�
 
 - [PyMOL教育版安装教程](https://zhuanlan.zhihu.com/p/598711018)
 - [PyMOL 官网](https://pymol.org/2/)
+- [PyMod 如虎添翼](https://pymolwiki.org/index.php/PyMod)
 
 ---
 
