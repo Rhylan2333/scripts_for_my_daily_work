@@ -53,6 +53,10 @@ docker push caicai0/my_debian:v1.2
 # 接下来是启动pull下来的容器
 docker run --hostname=caicai --volume=[本地路径]:[容器路径] --workdir=[进入容器后的路径] --name my_bioinfo -t -i -d caicai0/my_debian:v1.2
 ```
+## PyMOL 教育版，申请起来比较容易
+
+- [PyMOL教育版安装教程](https://zhuanlan.zhihu.com/p/598711018)
+- [PyMOL 官网](https://pymol.org/2/)
 
 ---
 
