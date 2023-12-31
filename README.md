@@ -53,6 +53,9 @@ docker push caicai0/my_debian:v1.2
 # 接下来是启动pull下来的容器
 docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility -e NVIDIA_VISIBLE_DEVICES=all nvidia/cuda:12.3.1-devel-ubuntu22.04
 ```
+
+- 强烈建议使用 GPU，[NVIDIA Docker：让 GPU 服务器应用程序部署变得容易](https://developer.nvidia.com/zh-cn/blog/nvidia-docker-gpu-server-application-deployment-made-easy/)
+
 ## PyMOL 教育版，申请起来比较容易
 
 - [PyMOL教育版安装教程](https://zhuanlan.zhihu.com/p/598711018)
