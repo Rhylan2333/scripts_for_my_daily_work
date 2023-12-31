@@ -51,7 +51,7 @@ docker container ls  # 查看需要push的container
 docker commit -a "Yuhao Cai" e1079b1cf715 caicai0/my_debian:v1.2  # “e1079b1cf715”是container的ID。
 docker push caicai0/my_debian:v1.2
 # 接下来是启动pull下来的容器
-docker run --hostname=caicai --volume=[本地路径]:[容器路径] --workdir=[进入容器后的路径] --name my_bioinfo -t -i -d caicai0/my_debian:v1.2
+docker run -dit --name="my_ubuntu-gpu" --hostname="caicai" --volume="C:\Users\caicai\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all nvidia/cuda:12.3.1-devel-ubuntu22.04 nvidia-smi
 ```
 ## PyMOL 教育版，申请起来比较容易
 
