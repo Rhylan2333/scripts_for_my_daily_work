@@ -64,6 +64,10 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 - [PyMOL 官网](https://pymol.org/2/)，下载。
 - [PyMod 如虎添翼](https://pymolwiki.org/index.php/PyMod)，可视化地使用 modeller。
 - [能用 conda 安装 modeller](https://salilab.org/modeller/download_installation.html) 的话，绝不用软件库或解压包，因为环境依赖问题。
+- 通过 conda 创建 pymol-open-source 的运行环境，安装 pymol-open-source、biopython；然后将 modeller 安装在 pymol-open-source 的这个环境。
+- 启动 pymol-open-source 后，安装 pymod3 插件，并重启。
+- 启动 pymod，在其导航栏的 help 选项中点击”Install PyMod Components“，完成其余安装。
+- 然后就可以借助 PyMod 使用 Modeller 进行同源建模了。
 
 ## [imgcat](https://github.com/eddieantonio/imgcat) 查看图像
 
