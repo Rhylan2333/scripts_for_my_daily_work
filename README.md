@@ -65,6 +65,12 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 - [PyMod 如虎添翼](https://pymolwiki.org/index.php/PyMod)，可视化地使用 modeller。
 - [能用 conda 安装 modeller](https://salilab.org/modeller/download_installation.html) 的话，绝不用软件库或解压包，因为环境依赖问题。
 
+## [imgcat](https://github.com/eddieantonio/imgcat) 查看图像
+
+```
+imgcat -d 24bit -H my_github_avatar.jpg
+```
+
 ---
 
 ## 我想玩 [VIM Adventures](https://zhuanlan.zhihu.com/p/628613725)
