@@ -74,6 +74,11 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 ```
 imgcat -d 24bit -RH my_github_avatar.jpg
 ```
+## [viu](https://github.com/atanunq/viu) 查看图像
+
+```
+viu -b my_github_avatar.jpg
+```
 
 ---
 
