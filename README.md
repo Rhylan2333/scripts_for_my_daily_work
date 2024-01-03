@@ -93,6 +93,12 @@ viu -b my_github_avatar.jpg
 
 图像着色十分“复古”。
 
+## 一些 rust 命令行工具
+
+```
+bat    btm    cargo-binstall  cargo-fmt   clippy-driver  difft   dust  exa  lfs  mcfly  procs  rls            rust-gdb     rust-lldb  rustdoc  rustup     tldr      viu  zoxide
+broot  cargo  cargo-clippy    cargo-miri  delta          dprint  eva   fd   lsd  ouch   rip    rust-analyzer  rust-gdbgui  rustc      rustfmt  termimage  topgrade  xcp 
+```
 
 ---
 
