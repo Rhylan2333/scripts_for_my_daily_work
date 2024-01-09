@@ -60,6 +60,12 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 
 - 强烈建议使用 GPU，[NVIDIA Docker：让 GPU 服务器应用程序部署变得容易](https://developer.nvidia.com/zh-cn/blog/nvidia-docker-gpu-server-application-deployment-made-easy/)
 
+## [IQ-TREE](https://github.com/iqtree/iqtree2) 常用命令
+
+```
+iqtree2 -s [MSA-aligned-output.ply] -B 1000 -nt 16 --redo-tree
+```
+
 ## PyMOL 教育版，申请起来比较容易
 
 - [PyMOL教育版安装教程](https://zhuanlan.zhihu.com/p/598711018)
