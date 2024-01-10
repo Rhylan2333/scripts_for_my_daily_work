@@ -91,8 +91,10 @@ mafft --clustalout --auto [input.fasta] > [output.clustal]
 
 ## [IQ-TREE](https://github.com/iqtree/iqtree2) 常用命令
 
+建议单独创立一个路径用于存放建树用的 \[input.fasta\]、\[MSAoutput.phy\]、[qitree.output ...]。
+
 ```
-iqtree2 -s [MSA-aligned-output.ply] -B 1000 -nt 16 --redo-tree
+iqtree2 -s [MSA-aligned-output.ply] -B 1000 -nt 16 --prefix my_iqtree2 -gz --redo-tree
 ```
 
 ## PyMOL 教育版，申请起来比较容易
