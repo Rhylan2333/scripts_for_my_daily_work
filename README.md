@@ -62,6 +62,29 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 
 ## MSA 软件常用命令
 
+[MAFFT]
+
+- 编译完成后需要先执行软链接命令，以使用 `mafft --man`：
+
+```
+$ mafft --man
+man: /root/mafft-master/libexec/mafft/mafft.1: No such file or directory
+No manual entry for /root/mafft-master/libexec/mafft/mafft.1
+$ fd "mafft.1" ~/mafft-master
+/root/mafft-master/core/mafft.1
+/root/mafft-master/share/man/man1/mafft.1
+$ md5sum /root/mafft-master/core/mafft.1 /root/mafft-master/share/man/man1/mafft.1
+1eadd020af7e4f50baaf479f70823408  /root/mafft-master/core/mafft.1
+1eadd020af7e4f50baaf479f70823408  /root/mafft-master/share/man/man1/mafft.1
+$ ln -s /root/mafft-master/share/man/man1/mafft.1 /root/mafft-master/libexec/mafft/mafft.1
+$ mafft --man | head -n 5
+MAFFT(1)                                   Mafft Manual                                  MAFFT(1)
+
+THIS MANUAL IS FOR V6.2XX (2007)
+       Recent versions (v7.1xx; 2013 Jan.) have more features than those described below.  See
+       also the tips page at http://mafft.cbrc.jp/alignment/software/tips0.html
+```
+
 ```
 mafft --clustalout --auto [input.fasta] > [output.clustal]
 ```
