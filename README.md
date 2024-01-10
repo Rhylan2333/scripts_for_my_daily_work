@@ -62,7 +62,7 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 
 ## MSA 软件常用命令
 
-[MAFFT]
+[MAFFT](https://gitlab.com/sysimm/mafft)
 
 - 编译完成后需要先执行软链接命令，以使用 `mafft --man`：
 
@@ -87,6 +87,24 @@ THIS MANUAL IS FOR V6.2XX (2007)
 
 ```
 mafft --clustalout --auto [input.fasta] > [output.clustal]
+```
+
+[T-Coffee](https://tcoffee.org/Projects/tcoffee/index.html)
+
+会输出[三个文件](https://tcoffee.org/Projects/tcoffee/documentation/index.html#t-coffee)。
+
+```
+When aligning, T-Coffee will always at least generate three files:
+
+        sample_seq1.aln : Multiple Sequence Alignment (ClustalW format by default)
+
+        sample_seq1.dnd : guide tree (Newick format)
+
+        sample_seq1.html : colored MSA according to consistency (html format)
+```
+
+```
+t_coffee [input.fasta] -mode quickaln
 ```
 
 ## [IQ-TREE](https://github.com/iqtree/iqtree2) 常用命令
