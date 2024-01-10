@@ -60,6 +60,12 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 
 - 强烈建议使用 GPU，[NVIDIA Docker：让 GPU 服务器应用程序部署变得容易](https://developer.nvidia.com/zh-cn/blog/nvidia-docker-gpu-server-application-deployment-made-easy/)
 
+## MSA 软件常用命令
+
+```
+mafft --clustalout --auto [input.fasta] > [output.clustal]
+```
+
 ## [IQ-TREE](https://github.com/iqtree/iqtree2) 常用命令
 
 ```
