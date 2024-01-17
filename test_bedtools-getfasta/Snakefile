@@ -1,0 +1,12 @@
+rule test_bedtools:
+	input:
+		fasta = "test-bedtools.fas",
+		gff = "test-bedtools.gff3"
+	shell:
+		"""
+		bat --style header-filename {input.fasta}
+		bat --style header-filename {input.gff}
+		bedtools getfasta -fi {input.fasta} -bed {input.gff} -s | bat --style header-filename
+		bedtools getfasta -fi {input.fasta} -bed {input.gff} | bat --style header-filename
+		echo '`bedtools getfasta` will show the start number minus 1, while the end number will remain as is.'
+		"""
