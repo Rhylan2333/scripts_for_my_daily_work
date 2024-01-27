@@ -1,0 +1,10 @@
+[M::mm_idx_gen::0.009*0.74] collected minimizers
+[M::mm_idx_gen::0.014*1.02] sorted minimizers
+[M::main::0.014*0.99] loaded/built the index for 3 target sequence(s)
+[M::mm_mapopt_update::0.016*0.97] mid_occ = 50
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 3
+[M::mm_idx_stat::0.017*0.93] distinct minimizers: 1352 (98.74% are singletons); average occurrences: 1.013; average spacing: 10.065; total length: 13779
+[M::worker_pipeline::0.023*0.83] mapped 43 sequences
+[M::main] Version: 2.26-r1175
+[M::main] CMD: minimap2 -x asm5 -t 16 /home/work/MLC-YQC_projec/learn_RagTag/reference.fa /home/work/MLC-YQC_projec/learn_RagTag/query.fa
+[M::main] Real time: 0.031 sec; CPU: 0.022 sec; Peak RSS: 0.025 GB

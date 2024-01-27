@@ -1,0 +1,13 @@
+1: PREPARING DATA
+2,3: RUNNING mummer AND CREATING CLUSTERS
+# reading input file "/home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.asm.ntref" of length 8471
+# construct suffix tree for sequence of length 8471
+# (maximum reference length is 2305843009213693948)
+# (maximum query length is 18446744073709551615)
+# CONSTRUCTIONTIME /root/miniforge3/envs/ragtag/opt/mummer-3.23/mummer /home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.asm.ntref 0.00
+# reading input file "/home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.rename.fasta" of length 13781
+# matching query-file "/home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.rename.fasta"
+# against subject-file "/home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.asm.ntref"
+# COMPLETETIME /root/miniforge3/envs/ragtag/opt/mummer-3.23/mummer /home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.asm.ntref 0.01
+# SPACE /root/miniforge3/envs/ragtag/opt/mummer-3.23/mummer /home/work/MLC-YQC_projec/learn_RagTag/ragtag_output-patch/ragtag.patch.asm.ntref 0.02
+4: FINISHING DATA

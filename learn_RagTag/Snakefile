@@ -1,0 +1,65 @@
+rule do_correct:
+	input:
+		reference = "reference.fa",
+		query = "query.fa"
+	params:
+		out_dir = "ragtag_output-correct"
+	shell:
+		"""
+		ragtag.py correct {input.reference} {input.query} -o {params.out_dir} -t 16 -w -u
+		"""
+
+rule do_scaffolding:
+	input:
+		reference = "reference.fa",
+		query = "ragtag_output-correct/ragtag.correct.fasta"
+	params:
+		out_dir = "ragtag_output-scaffolding"
+	shell:
+		"""
+		ragtag.py scaffold {input.reference} {input.query} -o {params.out_dir} -t 16 -w -u -r
+		"""
+
+rule raw_scaffolding:
+	input:
+		reference = "reference.fa",
+		query = "query.fa"
+	params:
+		out_dir = "ragtag_output-raw-scaffolding"
+	shell:
+		"""
+		ragtag.py scaffold {input.reference} {input.query} -o {params.out_dir} -t 16 -w -u -r
+		"""
+
+rule do_patch:
+	input:
+		target = "ragtag_output-scaffolding/ragtag.scaffold.fasta",
+		query = "reference.fa"
+	params:
+		out_dir = "ragtag_output-patch"
+	shell:
+		# If "There are no alignments ...", it means that the environment variables are not configured properly.
+		# Check `whereis nucmer` to make sure that the path you installed is first, for example:
+		# $ whereis numer
+		# nucmer: /root/MUMmer3.23/nucmer /root/miniforge3/envs/ragtag/bin/nucmer
+		"""
+		ragtag.py patch {input.target} {input.query} -o {params.out_dir} -t 16 -w -u \
+		--fill-only
+		--aligner 'minimap2'
+		# --aligner 'nucmer'
+		"""
+
+rule nucmer_align:
+	input:
+		reference = "reference.fa",
+		query = "query.fa"
+	params:
+		prefix = "nucmer-out"
+	shell:
+		"""
+		nucmer -prefix {params.prefix} {input.reference} {input.query}
+		"""
+
+rule clean:
+	shell:
+		"rm -vrf ragtag_output-* && rm -v *.fai"
