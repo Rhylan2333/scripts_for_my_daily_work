@@ -63,8 +63,7 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 ## 使用 Podman-JupyterLab-R
 
 ```
-podman run -it -d --name="my_bio_env_jupyter" --hostname="caicai" --
-volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e TZ=Asia/Shanghai --publish-all docker.io/jupyter/r-notebook:x86_64-r-4.3.1
+podman run -it -d --name="my_bio_env_jupyter" --hostname="caicai" --user root --volume="C:\Users\cauca\Desktop\bmy":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e TZ=Asia/Shanghai --publish-all docker.io/jupyter/r-notebook:x86_64-r-4.3.1
 ```
 
 然后在 Podman Desktop 查看启动的容器，在 `Containers > Container Details` 的右上角点击“↗”（Open Browser），再执行 `jupyter server list` 命令获取 token 以登录，如下图：
