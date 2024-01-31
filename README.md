@@ -52,9 +52,9 @@ docker commit -a "Yuhao Cai" e1079b1cf715 caicai0/my_debian:v1.2  # “e1079b1cf
 docker push caicai0/my_debian:v1.2
 # 接下来是启动pull下来的容器
 docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all nvidia/cuda:12.3.1-devel-ubuntu22.04
-docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e TZ=Asia/Shanghai nvidia/cuda:12.3.1-devel-ubuntu22.04
-1289e918d0505208081924e2cb36a13f97411283ea97386d2fdd61d1432ac64e
-# 或者没必要的如下：
+docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e TZ=Asia/Shanghai --publish-all nvidia/cuda:12.3.1-devel-ubuntu22.04
+
+# 没必要的如下：
 docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility -e NVIDIA_VISIBLE_DEVICES=all nvidia/cuda:12.3.1-devel-ubuntu22.04
 ```
 
