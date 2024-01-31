@@ -60,6 +60,17 @@ docker run -it -d --name="nvidia-devel_ubuntu22.04" --hostname="caicai" --volume
 
 - 强烈建议使用 GPU，[NVIDIA Docker：让 GPU 服务器应用程序部署变得容易](https://developer.nvidia.com/zh-cn/blog/nvidia-docker-gpu-server-application-deployment-made-easy/)
 
+## 使用 Podman-JupyterLab-R
+
+```
+podman run -it -d --name="my_bio_env_jupyter" --hostname="caicai" --
+volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privileged=true --gpus all -e TZ=Asia/Shanghai --publish-all docker.io/jupyter/r-notebook:x86_64-r-4.3.1
+```
+
+然后在 Podman Desktop 查看启动的容器，在 `Containers > Container Details` 的右上角点击“↗”（Open Browser），再执行 `jupyter server list` 命令获取 token 以登录，如下图：
+
+![这是图片](/images/podman_for_R.png "podman for R")
+
 ## MSA 软件常用命令
 
 [MAFFT](https://gitlab.com/sysimm/mafft)
