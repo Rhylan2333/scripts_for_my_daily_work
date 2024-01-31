@@ -69,7 +69,8 @@ volume="C:\Users\cauca\Desktop\work":"/home/work" --workdir="/home/work" --privi
 
 然后在 Podman Desktop 查看启动的容器，在 `Containers > Container Details` 的右上角点击“↗”（Open Browser），再执行 `jupyter server list` 命令获取 token 以登录，如下图：
 
-![这是图片](/images/podman_for_R.png "podman for R")
+![这是图片](/images/podman_for_R.jpg "podman for R")
+![这是图片](/images/JupyterLab_for_R.jpg "JupyterLab for R")
 
 ## MSA 软件常用命令
 
