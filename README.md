@@ -193,3 +193,17 @@ rm -rf Vim-adventure
 ### [Interactive Vim tutorial](https://www.openvim.com/)，好！
 
 ### [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html)
+
+## 批量下载hmm
+
+```shell
+hmm_path='./hmm_files'
+
+while read line; do
+  id=$(echo $line | tr -d '\n')
+  printf "Downloading %s ... " $id
+  curl "https://www.ebi.ac.uk/interpro/wwwapi//entry/pfam/$($id)\?annotation\=hmm" -o "${hmm_path}/${line}".hmm.gz
+  echo 'Done.'
+  done < ./PFXXXXX.IDlist.txt
+
+```
