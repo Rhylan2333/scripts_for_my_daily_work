@@ -1,5 +1,13 @@
 # scripts_for_my_daily_work
 
+## extract_one_gene_from_a_gff_file.sh
+
+从一个GFF3文件中提取指向某个基因的数行。实列：
+
+```shell
+for i in $(<{input.id_list}); do echo "$i"; ./extract_one_gene_from_a_gff_file.sh -q "$i" -s {input.ori_gff} >> {output}; done
+```
+
 ## cal_fasta_seq_len.py
 
 统计一个FASTA文件中所有序列的长度然后以CSV格式输出，一般选最长的作为参考序列。示例：
