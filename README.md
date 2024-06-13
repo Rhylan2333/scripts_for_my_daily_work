@@ -6,6 +6,8 @@
 
 ```shell
 for i in $(<{input.id_list}); do echo "$i"; ./extract_one_gene_from_a_gff_file.sh -q "$i" -s {input.ori_gff} >> {output}; done
+# 另一个办法
+while read line; do id=$(echo "$line" | sd '[prefix or suffix]' ''); echo "$id"; rg "$id" ./[input.gff] | rg '\tgene' > ./[input.gene.gff]; done < [input.id_list]
 ```
 
 ## cal_fasta_seq_len.py
@@ -81,11 +83,17 @@ docker run -it -d --name="my_bio_env_jupyter" --hostname="caicai" --user root --
 
 ## MSA 软件常用命令
 
-[MAFFT](https://gitlab.com/sysimm/mafft)
+### [PROBCONS](http://probcons.stanford.edu/)
 
+- 使用mamba安装。
+
+### [MAFFT](https://gitlab.com/sysimm/mafft)
+
+> [使用 MAFFT 进行多序列比对](http://www.chenlianfu.com/?p=2214)
+> [](https://mafft.cbrc.jp/alignment/software/manual/manual.html#lbAI)
 - 编译完成后需要先执行软链接命令，以使用 `mafft --man`：
 
-```
+```shell
 $ mafft --man
 man: /root/mafft-master/libexec/mafft/mafft.1: No such file or directory
 No manual entry for /root/mafft-master/libexec/mafft/mafft.1
@@ -104,11 +112,12 @@ THIS MANUAL IS FOR V6.2XX (2007)
        also the tips page at http://mafft.cbrc.jp/alignment/software/tips0.html
 ```
 
-```
+```shell
 mafft --clustalout --auto [input.fasta] > [output.clustal]
+script -c 'time mafft --maxiterate 1000 --auto [input.fasta] > [output.fasta]' [output.fasta.log]
 ```
 
-[T-Coffee](https://tcoffee.org/Projects/tcoffee/index.html)
+### [T-Coffee](https://tcoffee.org/Projects/tcoffee/index.html)
 
 会输出[三个文件](https://tcoffee.org/Projects/tcoffee/documentation/index.html#t-coffee)。
 
@@ -122,16 +131,29 @@ When aligning, T-Coffee will always at least generate three files:
         sample_seq1.html : colored MSA according to consistency (html format)
 ```
 
-```
+```shell
 t_coffee [input.fasta] -mode quickaln
+```
+
+### [Clustal Omega](http://www.clustal.org/omega/)
+
+## [trimAl](https://vicfero.github.io/trimal/)
+
+> [Welcome to trimAl’s documentation!](https://trimal.readthedocs.io/en/latest/index.html)
+
+```shell
+trimal -in [input.fasta] -out[output.fasta] -automated1
 ```
 
 ## [IQ-TREE](https://github.com/iqtree/iqtree2) 常用命令
 
+> [IQ-tree2构建系统发育树使用小结](https://www.jianshu.com/p/aa0192f37657)
 建议单独创立一个路径用于存放建树用的 \[input.fasta\]、\[MSAoutput.phy\]、[qitree.output ...]。
 
-```
+```shell
+# 无根树
 iqtree2 -s [MSA-aligned-output.ply] -B 1000 -nt 16 --prefix my_iqtree2 -gz --redo-tree
+script -c 'iqtree2-mpi -s [MSA-aligned-output.trimal.fa] -B 1000 -nt 12 --prefix my_iqtree2-mpi -gz --redo-tree' my_iqtree2-mpi.script.log
 ```
 
 ## PyMOL 教育版，申请起来比较容易
@@ -147,7 +169,7 @@ iqtree2 -s [MSA-aligned-output.ply] -B 1000 -nt 16 --prefix my_iqtree2 -gz --red
 
 ## [imgcat](https://github.com/eddieantonio/imgcat) 查看图像
 
-```
+```shell
 imgcat -d 24bit -RH my_github_avatar.jpg
 ```
 
@@ -156,14 +178,14 @@ imgcat -d 24bit -RH my_github_avatar.jpg
 
 ## [termimage](https://github.com/nabijaczleweli/termimage) 查看图像
 
-```
+```shell
 termimage -s [width]x[height] my_github_avatar.jpg
 ```
 图像清晰度次于 imgcat。
 
 ## [viu](https://github.com/atanunq/viu) 查看图像
 
-```
+```shell
 viu -b my_github_avatar.jpg
 ```
 
