@@ -1,5 +1,15 @@
 # scripts_for_my_daily_work
 
+## [AnnoSINE_v2](https://github.com/liaoherui/AnnoSINE_v2)
+
+```shell
+mamba activate AnnoSINE
+# If set arg "-a" to 0, then Hmmer will search SINE using the plant hmm file. (default: 0)
+python $ANNOSINE_HOME/bin/AnnoSINE_v2.py -t 8 -a 1 -f 'y' 3 <input_filename> <output_dir>
+script -c 'python $ANNOSINE_HOME/bin/AnnoSINE_v2.py -t 8 -a 1 -f y 3 <input_filename> <output_dir>' <output_dir>/<output_filename>.script.log
+
+```
+
 ## extract_one_gene_from_a_gff_file.sh
 
 从一个GFF3文件中提取指向某个基因的数行。实列：
