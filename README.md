@@ -1,5 +1,14 @@
 # scripts_for_my_daily_work
 
+## pigz
+
+```shell
+# Compress
+tar -I 'pigz -9 -p 12' -cvf <archive>.tar.gz <input_dir>
+# Decompress
+tar -I 'pigz -d -9 -p 12' -xvf <archive>.tar.gz
+```
+
 ## [AnnoSINE_v2](https://github.com/liaoherui/AnnoSINE_v2)
 
 ```shell
