@@ -1,12 +1,24 @@
 # scripts_for_my_daily_work
 
-## pigz
+## crabz(https://github.com/sstadick/crabz)
+
+```shell
+# Compress
+tar -I 'crabz -l 9 -p 12' -cvf <archive>.tar.gz <input_dir>
+tar -cf - <input_dir> | crabz -l 9 -p 12 > <archive>.tar.gz
+# Decompress
+crabz -d -p 12 <archive>.tar.gz | tar -xvf -
+```
+
+## [pigz](https://github.com/madler/pigz)
 
 ```shell
 # Compress
 tar -I 'pigz -9 -p 12' -cvf <archive>.tar.gz <input_dir>
+tar -cvf - <input_dir> | pigz -9 -p 12 > <archive>.tar.gz
 # Decompress
-tar -I 'pigz -d -9 -p 12' -xvf <archive>.tar.gz
+tar -I 'pigz -d -p 12' -xvf <archive>.tar.gz
+pigz -d -p 12 <archive>.tar.gz && tar -xvf <archive>.tar && rm <archive>.tar
 ```
 
 ## [AnnoSINE_v2](https://github.com/liaoherui/AnnoSINE_v2)
