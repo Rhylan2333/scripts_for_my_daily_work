@@ -1,6 +1,6 @@
 # scripts_for_my_daily_work
 
-## crabz(https://github.com/sstadick/crabz)
+## [crabz](https://github.com/sstadick/crabz)
 
 ```shell
 # Compress
