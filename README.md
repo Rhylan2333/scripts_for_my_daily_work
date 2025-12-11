@@ -268,3 +268,45 @@ while read line; do
   done < ./PFXXXXX.IDlist.txt
 
 ```
+
+## [seqkit](https://bioinf.shenwei.me/seqkit/)
+
+### 使用`seqkit replace`重命名FASTA ID
+
+```
+$ cat test.fa 
+>seq1 desc1
+CCCCAAAACCCCATGATCATGGATC
+>seq2 desc2
+CCCCAAAACCCCATGGCATCATTCA
+>seq3 desc3
+CCCCAAAACCCCATGTTGCTACTAG
+
+$ cat renameID.tsv 
+seq1     renamed_seq1
+seq2     renamed_seq2
+seq3     renamed_seq3
+
+# 根据kv-file映射文件，只修改ID，并保留描述
+$ seqkit replace -p '^(\S+) (.+?)$' -r '{kv} ${2}' -k renameID.tsv test.fa
+[INFO] read key-value file: renameID.tsv
+[INFO] 3 pairs of key-value loaded
+>renamed_seq1 name1
+CCCCAAAACCCCATGATCATGGATC
+>renamed_seq2 name2
+CCCCAAAACCCCATGGCATCATTCA
+>renamed_seq3 name3
+CCCCAAAACCCCATGTTGCTACTAG
+
+# 根据kv-file映射文件，只修改ID，并保留旧的ID和描述
+$ seqkit replace -p '^(\S+) (.+?)$' -r '{kv} ${1} ${2}' -k renameID.tsv test.fa
+[INFO] read key-value file: renameID.tsv
+[INFO] 3 pairs of key-value loaded
+>renamed_seq1 seq1 name1
+CCCCAAAACCCCATGATCATGGATC
+>renamed_seq2 seq2 name2
+CCCCAAAACCCCATGGCATCATTCA
+>renamed_seq3 seq3 name3
+CCCCAAAACCCCATGTTGCTACTAG
+
+```
