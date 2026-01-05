@@ -17,3 +17,19 @@ csvtk -t cut -f 'fastq_aspera' filereport_read_run_[your PRJNAXXXX ID].not_merge
 chmod +x filereport_read_run_[your PRJNAXXXX ID].not_merged.ascp.sh
 
 ./filereport_read_run_[your PRJNAXXXX ID].not_merged.ascp.sh
+
+z [your PRJNAXXXX ID]-ascp/
+script -c 'md5sum -c fastq_md5.should_be.md5' md5sum-check.log
+
+z ..
+script -c '''
+  for fq in [your PRJNAXXXX ID]-ascp/*.fastq.gz; do
+    id=$(basename $fq | cut -d '_' -f 1)
+    mkdir -pv "[your PRJNAXXXX ID]-ascp/$id"
+    mv -v $fq "[your PRJNAXXXX ID]-ascp/$id/"
+  done
+''' ./log.mv_fastq.log
+
+seqkit stats $(fd '.fastq.gz' [your PRJNAXXXX ID]-ascp/) -j 14 -aT -o [your PRJNAXXXX ID]-ascp/seqkit-stats.tsv
+
+# Then，do BWA ...
