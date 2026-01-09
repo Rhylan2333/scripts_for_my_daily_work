@@ -310,3 +310,19 @@ CCCCAAAACCCCATGGCATCATTCA
 CCCCAAAACCCCATGTTGCTACTAG
 
 ```
+
+## [DESeq2](https://bioconductor.org/packages//release/bioc/html/DESeq2.html)
+
+安装这个R包：
+
+```
+mamba create -n DESeq2
+mamamba activate DESeq2
+mamba install -c bioconda bioconductor-genomeinfodb
+mamba install -c bioconda -c conda-forge bioconductor-deseq2
+
+R
+
+library(DESeq2)
+
+```
