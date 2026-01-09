@@ -318,7 +318,7 @@ CCCCAAAACCCCATGTTGCTACTAG
 ```
 mamba create -n DESeq2
 mamamba activate DESeq2
-mamba install -c bioconda bioconductor-genomeinfodb
+mamba install -c bioconda bioconductor-genomeinfodb  # 先装GenomeInfoDb，顺序不能变
 mamba install -c bioconda -c conda-forge bioconductor-deseq2
 
 #   bioconductor-biobase               2.66.0        r44h3df3fcb_0         bioconda
