@@ -321,6 +321,25 @@ mamamba activate DESeq2
 mamba install -c bioconda bioconductor-genomeinfodb
 mamba install -c bioconda -c conda-forge bioconductor-deseq2
 
+#   bioconductor-biobase               2.66.0        r44h3df3fcb_0         bioconda
+#   bioconductor-biocgenerics          0.52.0        r44hdfd78af_3         bioconda
+#   bioconductor-biocparallel          1.40.0        r44he5774e6_1         bioconda
+#   bioconductor-data-packages         20250625      hdfd78af_0            bioconda
+#   bioconductor-delayedarray          0.32.0        r44h3df3fcb_1         bioconda
+#   bioconductor-deseq2                1.46.0        r44he5774e6_1         bioconda
+#   bioconductor-genomeinfodb          1.42.0        r44hdfd78af_2         bioconda
+#   bioconductor-genomeinfodbdata      1.2.13        r44hdfd78af_0         bioconda
+#   bioconductor-genomicranges         1.58.0        r44h3df3fcb_2         bioconda
+#   bioconductor-iranges               2.40.0        r44h3df3fcb_2         bioconda
+#   bioconductor-matrixgenerics        1.18.0        r44hdfd78af_0         bioconda
+#   bioconductor-s4arrays              1.6.0         r44h3df3fcb_1         bioconda
+#   bioconductor-s4vectors             0.44.0        r44h3df3fcb_2         bioconda
+#   bioconductor-sparsearray           1.6.0         r44h3df3fcb_1         bioconda
+#   bioconductor-summarizedexperiment  1.36.0        r44hdfd78af_0         bioconda
+#   bioconductor-ucsc.utils            1.2.0         r44h9ee0642_1         bioconda
+#   bioconductor-xvector               0.46.0        r44h15a9599_2         bioconda
+#   bioconductor-zlibbioc              1.52.0        r44h3df3fcb_2         bioconda
+
 R
 
 library(DESeq2)
