@@ -309,6 +309,8 @@ CCCCAAAACCCCATGGCATCATTCA
 >renamed_seq3 seq3 name3
 CCCCAAAACCCCATGTTGCTACTAG
 
+awk -F'\t' 'NR==FNR {map[$1]=$2; next} {if ($1 in map) print map[$1]; else print $1}' ids.map.tsv ids.txt > ids.renamed.txt
+
 ```
 
 ## [DESeq2](https://bioconductor.org/packages//release/bioc/html/DESeq2.html)
