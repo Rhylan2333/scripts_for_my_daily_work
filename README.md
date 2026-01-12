@@ -310,6 +310,7 @@ CCCCAAAACCCCATGGCATCATTCA
 CCCCAAAACCCCATGTTGCTACTAG
 
 awk -F'\t' 'NR==FNR {map[$1]=$2; next} {if ($1 in map) print map[$1]; else print $1}' ids.map.tsv ids.txt > ids.renamed.txt
+awk -F'\t' 'BEGIN{OFS="\t"} NR==FNR {map[$1]=$2; next} /^#/ {print; next} ($1 in map) {$1=map[$1]} {print}' id.map.tsv old.gff > new.gff
 
 ```
 
