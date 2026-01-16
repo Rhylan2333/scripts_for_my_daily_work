@@ -274,7 +274,7 @@ while read line; do
 ### 使用`seqkit replace`重命名FASTA ID
 
 ```
-$ cat test.fa 
+$ cat test.fa
 >seq1 desc1
 CCCCAAAACCCCATGATCATGGATC
 >seq2 desc2
@@ -282,7 +282,15 @@ CCCCAAAACCCCATGGCATCATTCA
 >seq3 desc3
 CCCCAAAACCCCATGTTGCTACTAG
 
-$ cat renameID.tsv 
+$ cat test.0.fa
+>seq1
+CCCCAAAACCCCATGATCATGGATC
+>seq2
+CCCCAAAACCCCATGGCATCATTCA
+>seq3
+CCCCAAAACCCCATGTTGCTACTAG
+
+$ cat renameID.tsv
 seq1     renamed_seq1
 seq2     renamed_seq2
 seq3     renamed_seq3
@@ -307,6 +315,28 @@ CCCCAAAACCCCATGATCATGGATC
 >renamed_seq2 seq2 name2
 CCCCAAAACCCCATGGCATCATTCA
 >renamed_seq3 seq3 name3
+CCCCAAAACCCCATGTTGCTACTAG
+
+# 对于缺少描述部分的FASTA，根据kv-file映射文件，只修改ID
+$ seqkit replace -p '^(\S+)$' -r '{kv}' -k renameID.tsv test.0.fa
+[INFO] read key-value file: renameID.tsv
+[INFO] 3 pairs of key-value loaded
+>renamed_seq1
+CCCCAAAACCCCATGATCATGGATC
+>renamed_seq2
+CCCCAAAACCCCATGGCATCATTCA
+>renamed_seq3
+CCCCAAAACCCCATGTTGCTACTAG
+
+# 对于缺少描述部分的FASTA，根据kv-file映射文件，只修改ID，并保留旧的ID
+$ seqkit replace -p '^(\S+)$' -r '{kv} ${1}' -k renameID.tsv test.0.fa
+[INFO] read key-value file: renameID.tsv
+[INFO] 3 pairs of key-value loaded
+>renamed_seq1 seq1
+CCCCAAAACCCCATGATCATGGATC
+>renamed_seq2 seq2
+CCCCAAAACCCCATGGCATCATTCA
+>renamed_seq3 seq3
 CCCCAAAACCCCATGTTGCTACTAG
 
 awk -F'\t' 'NR==FNR {map[$1]=$2; next} {if ($1 in map) print map[$1]; else print $1}' ids.map.tsv ids.txt > ids.renamed.txt
