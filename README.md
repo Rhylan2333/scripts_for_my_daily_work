@@ -378,3 +378,16 @@ R
 library(DESeq2)
 
 ```
+
+## [Minimap2](https://github.com/lh3/minimap2)
+
+```
+script -c 'minimap2 -t 12 -o minimap2_out.paf <target.fa> [query.fa]' minimap2_out.log
+```
+
+## [dotPlotly](https://github.com/tpoorten/dotPlotly)
+
+```
+git clone https://github.com/Rhylan2333/dotPlotly.git
+script -c '../dotPlotly/pafCoordsDotPlotly.R -i minimap2_out.paf -o dotPlotly.minimap2.plot -k [number of autosomes and sex chromosomes + 1] -s -t -l -p 10' dotPlotly.minimap2.plot.log
+```
