@@ -344,6 +344,12 @@ awk -F'\t' 'BEGIN{OFS="\t"} NR==FNR {map[$1]=$2; next} /^#/ {print; next} ($1 in
 
 ```
 
+### 使用`seqkit grep`检索FASTA
+
+```
+seqkit grep -n -r -p [regular expression search pattern] input.fa
+```
+
 ## [DESeq2](https://bioconductor.org/packages//release/bioc/html/DESeq2.html)
 
 安装这个R包：
