@@ -397,3 +397,14 @@ script -c 'minimap2 -t 12 -o minimap2_out.paf <target.fa> [query.fa]' minimap2_o
 git clone https://github.com/Rhylan2333/dotPlotly.git
 script -c '../dotPlotly/pafCoordsDotPlotly.R -i minimap2_out.paf -o dotPlotly.minimap2.plot -k [number of autosomes and sex chromosomes + 1] -s -t -l -p 10' dotPlotly.minimap2.plot.log
 ```
+
+## awk
+
+### 根据GFF统计每个染色体上基因的数量
+
+```
+while read line; do 
+  echo -en "$line\t"; 
+  awk -v chr="$line" '$1 == chr && $3 == "gene"' [gff_file] | wc -l 
+done < [chr_id_list]
+```
