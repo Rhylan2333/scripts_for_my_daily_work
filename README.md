@@ -403,6 +403,8 @@ script -c '../dotPlotly/pafCoordsDotPlotly.R -i minimap2_out.paf -o dotPlotly.mi
 ### 根据GFF统计每个染色体上基因的数量
 
 ```
+# [gff_file]: 输入的GFF格式文件路径
+# [chr_id_list]: 包含染色体ID列表的文本文件（每行一个染色体名称）
 while read line; do 
   echo -en "$line\t"; 
   awk -v chr="$line" '$1 == chr && $3 == "gene"' [gff_file] | wc -l 
