@@ -408,5 +408,5 @@ script -c '../dotPlotly/pafCoordsDotPlotly.R -i minimap2_out.paf -o dotPlotly.mi
 while read line; do 
   echo -en "$line\t"; 
   awk -v chr="$line" '$1 == chr && $3 == "gene"' [gff_file] | wc -l 
-done < [chr_id_list]
+done < [chr_id_list] > [gene_counts_per_chromosome.tsv]
 ```
